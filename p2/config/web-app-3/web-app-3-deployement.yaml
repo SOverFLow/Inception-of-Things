@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app-3
+  labels:
+    app: web-app-3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-app-3
+  template:
+    metadata:
+      labels:
+        app: web-app-3
+    spec:
+      containers:
+      - name: web-app-3
+        image: bharathshetty4/supermario
+        ports:
+        - containerPort: 8080

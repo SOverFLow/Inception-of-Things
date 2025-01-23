@@ -1,11 +1,18 @@
 #!/bin/bash
+export DEBIAN_FRONTEND=noninteractive
+apt-get update
+apt install -y curl
 
-sudo apt-get update -y
+cat /home/vagrant/.ssh/me.pub >>/home/vagrant/.ssh/authorized_keys
+mkdir -p /root/.ssh
+cat /home/vagrant/.ssh/me.pub >>/root/.ssh/authorized_keys
 
+# Set up K3s worker
+export K3S_URL="https://192.168.56.110:6443"
+export K3S_TOKEN=$(cat /vagrant/node-token)
+export INSTALL_K3S_EXEC="agent --node-ip=192.168.56.111 --flannel-iface=eth1"
 
-K3S_URL="https://192.168.56.110:6443" 
-K3S_TOKEN=""
-curl -sfL https://get.k3s.io | K3S_URL=$K3S_URL K3S_TOKEN=$K3S_TOKEN sh -
+# Install K3s agent
+curl -sfL https://get.k3s.io | sh -
 
-sudo systemctl status k3s-agent
-
+sudo kubectl version --client
