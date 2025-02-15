@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: web-app-2
-        image: wil42/playground:v1
+        image: nginxdemos/hello
         ports:
-        - containerPort: 8888
+        - containerPort: 4040

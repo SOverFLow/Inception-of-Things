@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: web-app-3
-        image: bharathshetty4/supermario
+        image: digiben/nginx-space-invaders
         ports:
         - containerPort: 8080
