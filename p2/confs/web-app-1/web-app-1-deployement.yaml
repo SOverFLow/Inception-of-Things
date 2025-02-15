@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: web-app-1
-        image: staticfloat/nginx-react-example
+        image: nginxdemos/hello
         ports:
-        - containerPort: 3030
+        - containerPort: 3000

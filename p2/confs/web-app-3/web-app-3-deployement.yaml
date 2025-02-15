@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: web-app-3
-        image: digiben/nginx-space-invaders
+        image: bretfisher/httpenv
         ports:
         - containerPort: 8080
