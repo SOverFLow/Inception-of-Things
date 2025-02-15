@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: web-app-3
-        image: bretfisher/httpenv
+        image: lucianophys/spring-boot-hello-world
         ports:
         - containerPort: 8080

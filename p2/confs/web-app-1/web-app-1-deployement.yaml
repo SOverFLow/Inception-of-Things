@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: web-app-1
-        image: nginxdemos/hello
+        image: appdynamics/sample-app-web
         ports:
         - containerPort: 3000
