@@ -1,0 +1,36 @@
+global:
+  hosts:
+    domain: salamane.com
+    https: false
+  ingress:
+    configureCertmanager: false 
+  minio:
+    enabled: false
+  psql:
+    password:
+      secret: gitlab-postgres-password
+      key: password
+  redis:
+    password:
+      enabled: false
+  shell:
+    password:
+      secret: gitlab-shell-secret
+      key: password
+  gitaly:
+    password:
+      secret: gitlab-gitaly-secret
+      key: password
+  registry:
+    bucket: gitlab-registry-storage
+certmanager:
+  install: false  
+nginx-ingress:
+  enabled: true
+  controller:
+    service:
+      type: ClusterIP
+postgresql:
+  install: true
+redis:
+  install: true
