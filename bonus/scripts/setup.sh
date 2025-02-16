@@ -19,6 +19,9 @@ echo_step "Installing Docker..."
 sudo apt-get install -y docker.io
 sudo systemctl start docker
 sudo systemctl enable docker
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
 
 
 # Install kubectl
