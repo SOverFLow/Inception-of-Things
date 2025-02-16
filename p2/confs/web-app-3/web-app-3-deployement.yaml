@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: web-app-3
-        image: bharathshetty4/supermario
+        image: lucianophys/spring-boot-hello-world
         ports:
         - containerPort: 8080

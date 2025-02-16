@@ -16,9 +16,9 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="server \
   --advertise-address=192.168.56.110" sh -
 
 # Create Docker Hub credentials secret
-sudo k3s kubectl create secret docker-registry dockerhub-secret \
-  --docker-username="its0me" \
-  --docker-password="\$\$aDocker\$\$12"
+# sudo k3s kubectl create secret docker-registry dockerhub-secret \
+#   --docker-username="its0me" \
+#   --docker-password="\$\$aDocker\$\$12"
 
 # apply the configurations
 sudo kubectl apply -f ./confs/web-app-1/web-app-1-deployement.yaml
