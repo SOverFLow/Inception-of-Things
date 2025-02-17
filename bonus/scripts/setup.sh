@@ -47,4 +47,10 @@ else
     echo_step "K3D is already installed. Skipping..."
 fi
 
-reboot
+# Install Helm if not present
+if ! command_exists helm; then
+    echo_step "Installing Helm..."
+    curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+else
+    echo_step "Helm is already installed. Skipping..."
+fi
