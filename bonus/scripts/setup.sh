@@ -25,7 +25,6 @@ if ! command_exists docker; then
     sudo systemctl enable docker
     sudo groupadd docker
     sudo usermod -aG docker $USER
-    newgrp docker
 else
     echo_step "Docker is already installed. Skipping..."
 fi
