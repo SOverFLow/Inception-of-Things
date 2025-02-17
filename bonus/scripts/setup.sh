@@ -15,7 +15,7 @@ command_exists() {
 
 # Update system
 echo_step "Updating system packages..."
-sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get update
 
 # Install Docker if not present
 if ! command_exists docker; then
