@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/herrsaid/salamanecd.git
+    repoURL: ${GITLAB_REPO_URL}  
     targetRevision: HEAD
     path: app
   destination:
