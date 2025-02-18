@@ -25,15 +25,3 @@ fi
 
 echo_step "Creating K3D cluster..."
 k3d cluster create mycluster -p "8080:80" -p "8443:443"
-
-echo_step "Waiting for the K3D cluster to be ready..."
-kubectl wait --for=condition=ready nodes --all --timeout=60s
-
-echo_step "Creating 'dev' namespace..."
-kubectl create namespace dev
-
-echo_step "Setting the kubectl context to the newly created cluster..."
-kubectl config use-context k3d-dev-cluster
-
-echo_step "K3D cluster 'dev-cluster' created and 'dev' namespace is ready!"
-echo_step "You can now use 'kubectl' to interact with your cluster and deploy applications to the 'dev' namespace."

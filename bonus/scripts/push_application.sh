@@ -15,7 +15,6 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-ls
 # Copy the ../confs/app directory into the repository
 echo "Copying $SOURCE_DIR to the repository..."
 cp -r "$SOURCE_DIR" "$TEMP_DIR/$REPO_NAME"
@@ -23,7 +22,6 @@ cp -r "$SOURCE_DIR" "$TEMP_DIR/$REPO_NAME"
 # Move into the cloned repository
 cd "$TEMP_DIR/$REPO_NAME"
 
-ls
 # Stage the changes
 git add -A
 
