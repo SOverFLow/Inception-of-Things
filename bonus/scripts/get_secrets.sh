@@ -11,7 +11,6 @@ get_and_print_secret() {
 
   if [ -z "${secret_value}" ]; then
     echo "Error: Secret ${secret_name} or key ${secret_key} not found."
-    exit 1
   else
     echo "Secret Value: ${secret_value}"
   fi

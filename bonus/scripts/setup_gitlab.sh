@@ -22,6 +22,9 @@ if ! command_exists kubectl; then
     exit 1
 fi
 
+# Setup the cluster
+./cluster_setup.sh
+
 echo_step "Adding GitLab Helm repository..."
 helm repo add gitlab https://charts.gitlab.io
 helm repo update
@@ -37,3 +40,21 @@ helm upgrade --install gitlab gitlab/gitlab \
   --set certmanager-issuer.email=me@example.com \
   --set gitlab.gitlab-runner.enabled=false \
   --namespace gitlab
+
+# Wait for the service to have endpoints
+echo "Waiting for service gitlab-webservice-default to be ready..."
+kubectl wait --for=condition=Ready pod -l app=webservice -n gitlab --timeout=500s
+
+if [ $? -eq 0 ]; then
+  echo "Service gitlab-webservice-default is ready. Starting port-forwarding..."
+
+  # Start port-forwarding in the background
+  kubectl port-forward svc/gitlab-webservice-default 8888:8181 -n gitlab &
+
+  echo "Port-forwarding started"
+
+else
+  echo "Timed out waiting for service gitlab-webservice-default to be ready."
+  exit 1
+fi
+
