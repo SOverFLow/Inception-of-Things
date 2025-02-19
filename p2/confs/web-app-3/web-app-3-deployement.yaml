@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: web-app-3
-        image: lucianophys/spring-boot-hello-world
+        image: ubuntu/apache2
         ports:
         - containerPort: 8080
