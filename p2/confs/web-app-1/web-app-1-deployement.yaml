@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - name: web-app-1
-        image: nginx
+        image: ruby:2.7
         ports:
         - containerPort: 3000
+        command: ["rails", "server", "-b", "0.0.0.0", "-p", "3000"]
