@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: web-app-3
-        image: kubernetesui/dashboard
+        image: wil42/playground:v1
         ports:
         - containerPort: 8080
