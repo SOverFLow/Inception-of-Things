@@ -1,4 +1,7 @@
 #!/bin/bash
+
+source env.sh
+
 GITLAB_REPO_URL="http://oauth2:$GitLab_ACCESS_TOKEN@localhost:8888/root/myapp.git"
 TEMP_DIR=$(mktemp -d)
 REPO_NAME=$(basename "$GITLAB_REPO_URL" .git)

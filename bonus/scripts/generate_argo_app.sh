@@ -9,7 +9,7 @@ if [ -z "$SERVICE_IP" ]; then
 fi
 
 # File to write the YAML content
-OUTPUT_FILE="argo-app.yaml"
+OUTPUT_FILE="../confs/argo-app.yaml"
 
 # YAML content with placeholder for IP
 YAML_CONTENT=$(cat <<EOF
