@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: web-app-3
-        image: ubuntu/apache2
+        image: kubernetesui/dashboard
         ports:
         - containerPort: 8080
