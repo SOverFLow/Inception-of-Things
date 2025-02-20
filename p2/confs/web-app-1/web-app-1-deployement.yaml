@@ -18,4 +18,4 @@ spec:
       - name: web-app-1
         image: wil42/playground:v2
         ports:
-        - containerPort: 3000
+        - containerPort: 8888

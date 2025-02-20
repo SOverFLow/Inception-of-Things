@@ -41,5 +41,5 @@ kubectl apply -f ../confs/argo-app.yaml
 
 # Expose ArgoCD UI for local access (port-forwarding)
 echo_step "Setting up port-forwarding to access ArgoCD UI locally..."
-kubectl -n argocd port-forward svc/argocd-server 8080:443 &
+kubectl -n argocd port-forward svc/argocd-server 8282:443 &
 
