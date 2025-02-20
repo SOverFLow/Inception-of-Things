@@ -18,7 +18,9 @@ spec:
       - name: web-app-3
         image: paulbouwer/hello-kubernetes:1
         ports:
-        - containerPort: 8888
+        - containerPort: 80
         env:
         - name: MESSAGE
           value: "Hello from App 3!"
+        - name: PORT
+          value: "80"
