@@ -11,7 +11,7 @@ echo_step() {
 
 # Update system
 echo_step "Updating system packages..."
-sudo apt-get update && apt-get upgrade -y
+sudo apt-get update
 
 
 # Install Docker if not present
